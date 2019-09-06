@@ -52,7 +52,7 @@ if [ ${TASK} == "cb" ]; then
         --checkpointing 1 \
         --checkpoint_metric COPA/SuperGLUE/val/accuracy:max \
         --checkpoint_task_metrics model/train/all/loss:min \
-        --bert_model bert-large-cased \
+        --bert_model bert-base-uncased \
         --batch_size 4 \
         --max_sequence_length 256 \
         --dataparallel 0 \
@@ -79,7 +79,7 @@ elif [ ${TASK} == "copa" ]; then
         --checkpointing 1 \
         --checkpoint_metric COPA/SuperGLUE/val/accuracy:max \
         --checkpoint_task_metrics model/train/all/loss:min \
-        --bert_model bert-large-cased \
+        --bert_model bert-base-uncased \
         --batch_size 4 \
         --max_sequence_length 40 \
         --dataparallel 0 \
@@ -105,7 +105,7 @@ elif [ ${TASK} == "multirc" ]; then
         --checkpointing 1 \
         --checkpoint_metric MultiRC/SuperGLUE/val/em_f1:max \
         --checkpoint_task_metrics model/train/all/loss:min \
-        --bert_model bert-large-cased \
+        --bert_model bert-base-uncased \
         --batch_size 4 \
         --max_sequence_length 256 \
         --dataparallel 0
@@ -130,7 +130,7 @@ elif [ ${TASK} == "rte" ]; then
         --checkpoint_metric RTE/SuperGLUE/val/accuracy:max \
         --checkpoint_task_metrics model/train/all/loss:min \
         --checkpoint_runway 1.0 \
-        --bert_model bert-large-cased \
+        --bert_model bert-base-uncased \
         --batch_size 8 \
         --max_sequence_length 256 \
         --slices 1 \
@@ -157,7 +157,7 @@ elif [ ${TASK} == "wic" ]; then
         --checkpointing 1 \
         --checkpoint_metric WiC/SuperGLUE/val/accuracy:max \
         --checkpoint_task_metrics model/train/all/loss:min \
-        --bert_model bert-large-cased \
+        --bert_model bert-base-uncased \
         --batch_size 4 \
         --max_sequence_length 256 \
         --dataparallel 0 \
@@ -184,7 +184,7 @@ elif [ ${TASK} == "wsc" ]; then
         --checkpointing 1 \
         --checkpoint_metric WSC/SuperGLUE/val/accuracy:max \
         --checkpoint_task_metrics model/train/all/loss:min \
-        --bert_model bert-large-cased \
+        --bert_model bert-base-uncased \
         --batch_size 4 \
         --max_sequence_length 256 \
         --dataparallel 0
@@ -209,7 +209,7 @@ elif [ ${TASK} == "swag" ]; then
         --checkpointing 1 \
         --checkpoint_metric SWAG/SuperGLUE/val/accuracy:max \
         --checkpoint_task_metrics model/train/all/loss:min \
-        --bert_model bert-large-cased \
+        --bert_model bert-base-uncased \
         --batch_size 3 \
         --max_sequence_length 256 \
         --dataparallel 0 \
