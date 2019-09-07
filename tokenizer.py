@@ -1,6 +1,6 @@
 import logging
 
-from pytorch_pretrained_bert import BertTokenizer
+from pytorch_transformers import *
 
 logger = logging.getLogger(__name__)
 
@@ -10,7 +10,7 @@ def get_tokenizer(tokenizer_name):
 
     if tokenizer_name.startswith("bert"):
         do_lower_case = "uncased" in tokenizer_name
-        tokenizer = BertTokenizer.from_pretrained(
+        tokenizer = XLNetTokenizer.from_pretrained(
             tokenizer_name, do_lower_case=do_lower_case
         )
 
