@@ -1,4 +1,5 @@
 allennlp
 jsonlines
-pytorch_pretrained_bert
+pytorch-transformers
 emmental
+
