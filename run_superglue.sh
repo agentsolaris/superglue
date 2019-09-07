@@ -57,6 +57,7 @@ if [ ${TASK} == "cb" ]; then
         --max_sequence_length 256 \
         --dataparallel 0 \
         --slices 1 \
+        --general_slices 1 \
         --model_path $CKPT
 elif [ ${TASK} == "copa" ]; then
     python run.py \
