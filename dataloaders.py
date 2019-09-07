@@ -16,7 +16,7 @@ def get_dataloaders(
     splits=["train", "val", "test"],
     max_data_samples=None,
     max_sequence_length=256,
-    tokenizer_name="bert-base-uncased",
+    tokenizer_name="xlnet-base-cased",
     batch_size=16,
     augment=False,
     uid="uids",
