@@ -90,36 +90,36 @@ def parse(csv_path, tokenizer, uid, max_data_samples, max_sequence_length):
 
         # Convert to BERT manner
         token1 = (
-            ["[CLS]"]
-            + sent1_tokens
+            sent1_tokens
             + ["[SEP]"]
             + sent2_tokens
             + choice1_tokens
             + ["[SEP]"]
+            + ["[CLS]"]
         )
         token2 = (
-            ["[CLS]"]
-            + sent1_tokens
+            sent1_tokens
             + ["[SEP]"]
             + sent2_tokens
             + choice2_tokens
             + ["[SEP]"]
+            + ["[CLS]"]
         )
         token3 = (
-            ["[CLS]"]
-            + sent1_tokens
+            sent1_tokens
             + ["[SEP]"]
             + sent2_tokens
             + choice3_tokens
             + ["[SEP]"]
+            + ["[CLS]"]
         )
         token4 = (
-            ["[CLS]"]
-            + sent1_tokens
+            sent1_tokens
             + ["[SEP]"]
             + sent2_tokens
             + choice4_tokens
             + ["[SEP]"]
+            + ["[CLS]"]
         )
 
         max_choice_len = 0

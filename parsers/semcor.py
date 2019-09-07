@@ -97,7 +97,7 @@ def parse(jsonl_path, tokenizer, uid, max_data_samples, max_sequence_length):
                 sent1_tokens[idx : idx + len(word_tokens_in_sent1)]
                 == word_tokens_in_sent1
             ):
-                token1_idxs.append(idx + 1)  # Add [CLS]
+                token1_idxs.append(idx + 2)  # Add [CLS]
                 break
 
         for idx in range(sentence2_idx - 1, len(sent2_tokens)):
@@ -106,15 +106,15 @@ def parse(jsonl_path, tokenizer, uid, max_data_samples, max_sequence_length):
                 == word_tokens_in_sent2
             ):
                 token2_idxs.append(
-                    idx + len(sent1_tokens) + 2
+                    idx + len(sent1_tokens) + 1
                 )  # Add the length of the first sentence and [CLS] + [SEP]
                 break
 
         # Convert to BERT manner
-        tokens = ["[CLS]"] + sent1_tokens + ["[SEP]"]
+        tokens =  sent1_tokens + ["[SEP]"]
         token_segments = [0] * len(tokens)
 
-        tokens += sent2_tokens + ["[SEP]"]
+        tokens += sent2_tokens + ["[SEP]"] + ["[CLS]"]
         token_segments += [1] * (len(sent2_tokens) + 1)
 
         token_ids = tokenizer.convert_tokens_to_ids(tokens)

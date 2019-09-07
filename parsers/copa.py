@@ -82,22 +82,22 @@ def parse(jsonl_path, tokenizer, uid, max_data_samples, max_sequence_length):
 
         # Convert to BERT manner
         tokens1 = (
-            ["[CLS]"]
-            + sent1_tokens
+            sent1_tokens
             + ["[SEP]"]
             + sent2_tokens
             + ["[SEP]"]
             + choice1_tokens
             + ["[SEP]"]
+            + ["[CLS]"]
         )
         tokens2 = (
-            ["[CLS]"]
-            + sent1_tokens
+            sent1_tokens
             + ["[SEP]"]
             + sent2_tokens
             + ["[SEP]"]
             + choice2_tokens
             + ["[SEP]"]
+            + ["[CLS]"]
         )
 
         token1_ids = tokenizer.convert_tokens_to_ids(tokens1)

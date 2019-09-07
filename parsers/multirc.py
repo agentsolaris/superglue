@@ -85,12 +85,12 @@ def parse(jsonl_path, tokenizer, uid, max_data_samples, max_sequence_length):
 
                 # Generate tokens
                 tokens = (
-                    ["[CLS]"]
-                    + para_token
+                    para_token
                     + ["[SEP]"]
                     + question_token
                     + answer_token
                     + ["[SEP]"]
+                    + ["[CLS]"]
                 )
                 # No token segments
                 token_segments = [0] * (len(para_token) + 2) + [0] * (

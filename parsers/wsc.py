@@ -178,13 +178,13 @@ def parse(jsonl_path, tokenizer, uid, max_data_samples, max_sequence_length):
             bert_tokens_sub5 = tokenizer.tokenize(text[span1_char_index[1] :])
 
         tokens = (
-            ["[CLS]"]
-            + bert_tokens_sub1
+            bert_tokens_sub1
             + bert_tokens_sub2
             + bert_tokens_sub3
             + bert_tokens_sub4
             + bert_tokens_sub5
             + ["[SEP]"]
+            + ["[CLS]"]
         )
 
         if len(tokens) > max_len:
