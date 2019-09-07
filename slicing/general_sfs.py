@@ -105,8 +105,37 @@ def slice_multiple_articles(example):
     multiple_definite = sum([int(x == "the") for x in sentences.split()]) > 1
     return multiple_indefinite or multiple_definite
 
+#new ones
+@slicing_function(fields=["sentence1", "sentence2"])
+def slice_not(example):
+    sentences = example.sentence1 + example.sentence2
+    return "not" in sentences
+
+@slicing_function(fields=["sentence1", "sentence2"])
+def slice_uncertain(example):
+    uncertain_words = ["doubtful", "undecided", "unsure", "indefinite"]
+    both_sentences = example.sentence1 + example.sentence2
+    return any([p in both_sentences for p in uncertain_words])
+
+@slicing_function(fields=["sentence1", "sentence2"])
+def slice_freq(example):
+    freq_words = ["hourly", "annually", "usually", "often", "daily"]
+    both_sentences = example.sentence1 + example.sentence2
+    return any([p in both_sentences for p in freq_words])
+
+@slicing_function(fields=["sentence1", "sentence2"])
+def slice_speech(example):
+    speech_words = ["\" said", "\" asked", "\" replied"]
+    both_sentences = example.sentence1 + example.sentence2
+    return any([p in both_sentences for p in speech_words])
+
+
 
 slices = [
+    slice_not,
+    slice_uncertain,
+    slice_freq,
+    slice_speech,
     slice_temporal_preposition,
     slice_possessive_preposition,
     slice_is_comparative,
