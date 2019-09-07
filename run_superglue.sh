@@ -52,7 +52,7 @@ if [ ${TASK} == "cb" ]; then
         --checkpointing 1 \
         --checkpoint_metric COPA/SuperGLUE/val/accuracy:max \
         --checkpoint_task_metrics model/train/all/loss:min \
-        --bert_model xlnet-base-cased \
+        --bert_model xlnet-large-cased \
         --batch_size 4 \
         --max_sequence_length 256 \
         --dataparallel 0 \
